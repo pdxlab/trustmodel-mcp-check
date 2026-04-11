@@ -1,0 +1,23 @@
+{
+  "name": "trustmodel-mcp-trust-check",
+  "version": "1.0.0",
+  "description": "GitHub Action to check TrustScore of MCP servers before agent connections",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "ncc build src/index.js -o dist",
+    "test": "node src/index.js"
+  },
+  "dependencies": {
+    "@actions/core": "^1.10.1"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.1"
+  },
+  "keywords": ["mcp", "trust", "security", "ai-safety", "github-action"],
+  "author": "TrustModel.ai",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pdxlab/trustmodel-mcp-check"
+  }
+}

@@ -1,0 +1,36 @@
+name: 'TrustModel MCP Trust Check'
+description: 'Check TrustScore of MCP servers before allowing agent connections. Block high-risk servers in CI.'
+author: 'TrustModel.ai'
+
+branding:
+  icon: 'shield'
+  color: 'blue'
+
+inputs:
+  servers:
+    description: 'Comma-separated list of MCP server names or GitHub URLs to check'
+    required: true
+  min-score:
+    description: 'Minimum TrustScore required (0-10). Servers below this fail the check.'
+    required: false
+    default: '6.0'
+  fail-on-high-risk:
+    description: 'Fail the workflow if any server is rated High Risk or Critical'
+    required: false
+    default: 'true'
+  api-key:
+    description: 'TrustModel API key (optional — public scores available without key)'
+    required: false
+    default: ''
+
+outputs:
+  results:
+    description: 'JSON array of server scores'
+  passed:
+    description: 'true if all servers meet minimum score'
+  summary:
+    description: 'Human-readable summary of results'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
