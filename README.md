@@ -14,7 +14,7 @@ jobs:
   trust-check:
     runs-on: ubuntu-latest
     steps:
-      - uses: trustmodel/mcp-trust-check@v1
+      - uses: pdxlab/trustmodel-mcp-check@v1
         with:
           servers: "stripe, github, slack, postgresql"
           min-score: "6.0"
@@ -75,7 +75,7 @@ Full methodology and rankings: [trustmodel.ai/mcp-servers](https://trustmodel.ai
 
 ### Block risky servers in enterprise CI
 ```yaml
-- uses: trustmodel/mcp-trust-check@v1
+- uses: pdxlab/trustmodel-mcp-check@v1
   with:
     servers: "stripe, aws, kubernetes"
     min-score: "7.0"        # Enterprise threshold
@@ -84,7 +84,7 @@ Full methodology and rankings: [trustmodel.ai/mcp-servers](https://trustmodel.ai
 
 ### Audit all MCP servers in your agent config
 ```yaml
-- uses: trustmodel/mcp-trust-check@v1
+- uses: pdxlab/trustmodel-mcp-check@v1
   with:
     servers: "github, slack, postgresql, notion, salesforce"
     min-score: "5.0"        # Lower threshold, just flag risks
@@ -102,7 +102,7 @@ jobs:
   trust-gate:
     runs-on: ubuntu-latest
     steps:
-      - uses: trustmodel/mcp-trust-check@v1
+      - uses: pdxlab/trustmodel-mcp-check@v1
         with:
           servers: "new-server-from-pr"
           min-score: "6.0"
