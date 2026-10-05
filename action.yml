@@ -1,5 +1,5 @@
 name: 'TrustModel MCP Trust Check'
-description: 'Check TrustScore of MCP servers before allowing agent connections. Block high-risk servers in CI.'
+description: 'Gate MCP servers by TrustScore in CI — block high-risk servers before agents connect.'
 author: 'TrustModel.ai'
 
 branding:
